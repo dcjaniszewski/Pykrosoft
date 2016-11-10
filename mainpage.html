@@ -1,0 +1,66 @@
+<script>
+	function getAccount(){
+		var x = document.cookie;
+		var text = document.getElementById("accounttype").innerHTML;
+		var pos = text.replace("Account",x );
+		document.getElementById("accounttype").innerHTML = pos;
+		
+		
+		/*Changes page if Student account*/
+		if(x=="Student"){
+			var text = document.getElementById("mainpagetext").innerHTML;
+			var pos = text.replace("text", "Click on 'Vote' to participate and/or view current elections! Your vote matters!" );
+			var style = document.getElementById("create");
+			style.style.visibility = "hidden";
+			var style2 = document.getElementById("modify");
+			style2.style.visibility = "hidden";
+			document.getElementById("mainpagetext").innerHTML = pos;
+		}
+		/*Changes page if Head of Student Org account */
+		else if(x=="Head of Student Org."){
+			var text = document.getElementById("mainpagetext").innerHTML;
+			var pos = text.replace("text", "(Insert what Head of Student Orgs can do here)" );
+			var style = document.getElementById("vote");
+			style.style.visibility = "hidden";
+			document.getElementById("mainpagetext").innerHTML = pos;	
+		}
+		/*Changes page if Election Commissioner account */
+		else if(x=="Election Comm"){
+			var text = document.getElementById("mainpagetext").innerHTML;
+			var pos = text.replace("text", "(Insert what Election Commissioner can do here)" );
+			var style = document.getElementById("vote");
+			style.style.visibility = "hidden";
+			document.getElementById("mainpagetext").innerHTML = pos;
+		}
+		/*Changes page for Admin account */
+		else if(x=="Admin"){
+			var text = document.getElementById("mainpagetext").innerHTML;
+			var pos = text.replace("text", "(Insert what Admin can do here)" );
+			document.getElementById("mainpagetext").innerHTML = pos;
+		}
+	}
+	
+</script>
+<html>
+	<head>
+		<title>Morgantown University Portal</title>
+		
+		<link rel = "stylesheet" href = "stylesheet.css">
+	</head>
+	<body onload="getAccount()">
+		<div style = "height:600px; width: 500px;">
+		<ul>
+			<li id = "home"><a href = "mainpage.html">Home</a></li>
+			<li id = "vote"><a href = "viewballot.html">Vote</a></li>
+			<li id = "create"><a href= "createballot.html">Create Ballot</a></li>
+			<li id = "modify"><a href = "modifyballot.html">Modify Ballot</a></li>
+			
+			
+		</ul>
+		<h1 id = "accounttype">Account</h1>
+		<p id = "mainpagetext">
+			text
+		</p>
+	</div>
+	</body>
+</html>
