@@ -113,16 +113,35 @@ li a {
     text-transform:capitalize;
     font-size:16px;
  
+ 
+ 
+ 	 -moz-transition:all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-webkit-transition:all .1s ease-in;
+	transition: all .1s ease-in;
 }
 
 li a:hover {
 	color: black;
     background-color: /*#ffaf54*/#E1A075;
+    
+    
+    
+    
+    -moz-box-shadow: 5px 5px 5px #888888;
+	-webkit-box-shadow: 5px 5px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
+	background-color: /*#ffaf54*/#E1A075;
+	color:black;
 }
+
+
 p{
 	padding-left:5px;
 	padding-right:5px;
 }
+
+
 .userfunctions{
 	display: inline-block;
     color: white;
@@ -132,4 +151,6 @@ p{
     font-size:16px;
     width:auto;
     float: left;
+    
 }
+

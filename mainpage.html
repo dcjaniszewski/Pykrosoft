@@ -11,9 +11,10 @@
 			var text = document.getElementById("mainpagetext").innerHTML;
 			var pos = text.replace("text", "Click on 'Vote' to participate and/or view current elections! Your vote matters!" );
 			var style = document.getElementById("election");
-			style.style.visibility = "hidden";
+			style.parentNode.removeChild(style);
+			style.style.textAlign = "center";
 			var style2 = document.getElementById("view");
-			style2.style.visibility = "hidden";
+			style2.parentNode.removeChild(style2);
 			document.getElementById("mainpagetext").innerHTML = pos;
 		}
 		/*Changes page if Head of Student Org account */
@@ -21,7 +22,7 @@
 			var text = document.getElementById("mainpagetext").innerHTML;
 			var pos = text.replace("text", "(Insert what Head of Student Orgs can do here)" );
 			var style = document.getElementById("vote");
-			style.style.visibility = "hidden";
+			style.parentNode.removeChild(style);
 			document.getElementById("mainpagetext").innerHTML = pos;	
 		}
 		/*Changes page if Election Commissioner account */
@@ -29,7 +30,7 @@
 			var text = document.getElementById("mainpagetext").innerHTML;
 			var pos = text.replace("text", "(Insert what Election Commissioner can do here)" );
 			var style = document.getElementById("vote");
-			style.style.visibility = "hidden";
+			style.parentNode.removeChild(style);
 			document.getElementById("mainpagetext").innerHTML = pos;
 		}
 		/*Changes page for Admin account */
@@ -62,15 +63,15 @@
 		</p>
 		<br><hr>
 			<h1>Important Links</h1>
-			<ul style = "display:inline-block">
+			<ul style = "display:inline-block" id = "vote">
 				<li class = "userfunctions"; id = "vote"><a href = "vote.html">Vote Here !</a></li>
 			</ul>
 			
-			<ul style = "display:inline-block">
+			<ul style = "display:inline-block" id = "election">
 				<li class = "userfunctions"; id = "election"><a href = "election.html">Election Management</a></li>
 			</ul>
 			
-			<ul style = "display:inline-block">
+			<ul style = "display:inline-block" id = "view">
 				<li class = "userfunctions"; id = "view"><a href = "view.html">View Report</a></li>
 			</ul>
 			
