@@ -64,7 +64,7 @@
 		<title>Election Management</title>
 	</head>
 	<body onload = "setupPage()">
-		<form action = "createelection.php">
+		<form name = "form" action = "createelection.php" method = "GET">
 		<div style = "height:600px; width: 500px;">
 		<ul>
 			<li id = "home"><a href = "mainpage.html">Home</a></li>
@@ -78,7 +78,7 @@
 				</p>
 			<p>Click here to create an election </p>
 			<button id = "createelection" onclick = "openComm()">Create</button>
-			<input type = "text" placeholder = "Enter Election Commissioner" style = "display:none" id = "eleccomminput"></input>
+			<input id = "eleccomminput" name = "input" type = "text" placeholder = "Enter Election Commissioner" style = "display:none">
 			<button id = "submitcomm" type = "submit" style = "display:none" onclick = " return validate()">Submit</button>
 			<br><br>
 			<button  id = "createballot" onclick = "createballot.html">Create Ballot</button>
