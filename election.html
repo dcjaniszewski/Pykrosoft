@@ -35,6 +35,8 @@
 		var id = document.getElementById("createelection");
 		id.parentNode.removeChild(id);
 		
+		id = document.getElementById("elecinput");
+		id.style.display = "inline";
 		id = document.getElementById("eleccomminput");
 		id.style.display = "inline";
 		
@@ -46,11 +48,13 @@
 	
 	function validate(){
 		var x = document.getElementById("eleccomminput").value;
+		var y = document.getElementById("elecinput").value;
+
 		var b = false;
-		if(x != ""){
+		if((x != "") || y != ""){
 			b = true;
 		}else{
-			alert("No Election Commissioner entered");
+			alert("Please enter text");
 			b = false;
 		}
 		return b;
@@ -78,7 +82,8 @@
 				</p>
 			<p>Click here to create an election </p>
 			<button id = "createelection" onclick = "openComm()">Create</button>
-			<input id = "eleccomminput" name = "input" type = "text" placeholder = "Enter Election Commissioner" style = "display:none">
+			<input id = "elecinput" name = "input" type = "text" placeholder = "Enter Election Name" style = "display:none"><br>
+			<input id = "eleccomminput" name = "input1" type = "text" placeholder = "Enter Election Commissioner" style = "display:none">
 			<button id = "submitcomm" type = "submit" style = "display:none" onclick = " return validate()">Submit</button>
 			<br><br>
 			<button  id = "createballot" onclick = "createballot.html">Create Ballot</button>

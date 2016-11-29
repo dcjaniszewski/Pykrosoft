@@ -1,8 +1,10 @@
 <?php
 //libxml_use_internal_errors(true);
-$filename = $_GET['input'];
-$electionFile = fopen($filename.=".txt","w+"); // change x+ to something that creates, reads and writes.
-fclose($electionFile);
+//$filename = $_GET['input'];
+//$electioncommissioner = $_GET('input1');
+//$electionFile = fopen($filename.=".txt","w+");
+//$electionFile = fwrite($electioncommissioner);
+//fclose($electionFile);
 ?>
 
 <html>
