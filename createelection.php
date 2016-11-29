@@ -1,11 +1,20 @@
 <?php
-//libxml_use_internal_errors(true);
-//$filename = $_GET['input'];
-//$electioncommissioner = $_GET('input1');
-//$electionFile = fopen($filename.=".txt","w+");
-//$electionFile = fwrite($electioncommissioner);
-//fclose($electionFile);
+libxml_use_internal_errors(true);
+$id = $_GET['input'];
+$id1 = $_GET['input1'];
+
+$filename = $id;
+$electioncommissioner = $id1;
+
+$electionFile = fopen($filename.=".txt","w+");
+fwrite($electionFile, $electioncommissioner);
+fclose($electionFile);
 ?>
+
+
+
+
+
 
 <html>
 <head>
