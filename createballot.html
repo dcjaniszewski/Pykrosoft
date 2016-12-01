@@ -1,6 +1,6 @@
 <script>
     function validate(){
-        var x = document.getElementById("eleccipnut").value;
+        var x = document.getElementById("elecinput").value;
         var id = document.getElementById("elecinput");
 
         var b = false;
@@ -10,7 +10,11 @@
 
             id = document.getElementById("submitelection");
             id.parentNode.removeChild(id);
+            id = document.getElementById("electionText");
+            id.parentNode.removeChild(id);
 
+            id = document.getElementById("raceText");
+            id.style.display = "inline";
             id = document.getElementById("raceinput");
             id.style.display = "inline";
             id = document.getElementById("submitrace");
@@ -22,8 +26,31 @@
         }
         return b;
     }
-    function openBall(){
+    function openRaces(){
+        var numRaces = document.getElementById("raceinput").value;
+        var container = document.getElementById("div");
 
+        var id = document.getElementById("raceText");
+        id.parentNode.removeChild(id);
+
+        id = document.getElementById("raceinput");
+        id.parentNode.removeChild(id);
+        id = document.getElementById("submitrace");
+        id.parentNode.removeChild(id);
+
+        for(i = 0; i < numRaces; i++){
+            var tb = document.createElement("input");
+            tb.type = "text";
+            tb.id = "race_" + i;
+            tb.style = "inline";
+            container.appendChild(tb);
+        }
+        var subRaces = document.createElement("button");
+        subRaces.type="button";
+        subRaces.id = "subRaces";
+        subRaces.textContent = "Submit Races";
+        subRaces.style = "inline";
+        container.appendChild(subRaces);
     }
 </script>
 
@@ -35,7 +62,7 @@
     <title>Create Ballot</title>
 </head>
 <body>
-<div style = "height:600px; width: 500px;">
+<div id = "div" style = "height:600px; width: 500px;">
     <ul>
         <li id = "home"><a href = "mainpage.html">Home</a></li>
         <li id = "news"><a href = "mainpage.html">News</a></li>
@@ -46,13 +73,14 @@
     <h1>Create Ballot</h1>
     <p id = "mainpagetext">
     </p>
-    <p>Please enter the election name you'd like to create a Ballot for</p>
+    <p id = "electionText">Please enter the election name you'd like to create a Ballot for</p>
+    <p id = "raceText" style = "display:none">Please enter the number of races to be on the Ballot</p>
     <input id = "elecinput" name = "input" type = "text" placeholder = "Enter Election Name">
     <br><br>
     <button id = "submitelection" type = "submit" onclick = "return validate()">Submit</button>
     <input id = "raceinput" name = "input" type = "text" placeholder = "Number of Races" style = "display:none">
-    <br>
-    <button id = "submitrace" type = "submit" style = "display:none" onclick = "openBall()">Submit</button>
+    <br><br>
+    <button id = "submitrace" type = "button" style = "display:none" onclick = "openRaces()">Enter</button>
 </div>
 </body>
 </html>
