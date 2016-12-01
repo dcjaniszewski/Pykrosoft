@@ -8,7 +8,7 @@
 			document.getElementById("mainpagetext").innerHTML = pos;
 			
 			style = document.getElementById("createballot");
-			style.parentNode.removeChild(style);		
+			style.parentNode.removeChild(style);
 		}
 		/*Changes page if Election Commissioner account */
 		else if(x=="Election Comm"){
@@ -16,11 +16,14 @@
 			var pos = text.replace("text", "(Insert what Election Commissioner can do here)" );
 			document.getElementById("mainpagetext").innerHTML = pos;
 			
-			style = document.getElementById("assigncomm");
+			style = document.getElementById("createelection");
 			style.parentNode.removeChild(style);
-			
-			style2 = document.getElementById("caption");
-			style2.parentNode.removeChild(style2);
+
+			style3 = document.getElementById("votemanagement");
+			style3.parentNode.removeChild(style3);
+
+			style4 = document.getElementById("modifyballot");
+			style4.parentNode.removeChild(style4);
 		}
 		/*Changes page for Admin account */
 		else if(x=="Admin"){
@@ -80,16 +83,16 @@
 			<p id = "mainpagetext">
 				text
 				</p>
-			<p>Click here to create an election </p>
-			<button id = "createelection" onclick = "openComm()">Create</button>
+			<button id = "createelection" onclick = "openComm()">Create Election</button>
 			<input id = "elecinput" name = "input" type = "text" placeholder = "Enter Election Name" style = "display:none"><br>
 			<input id = "eleccomminput" name = "input1" type = "text" placeholder = "Enter Election Commissioner" style = "display:none">
-			<button id = "submitcomm" type = "submit" style = "display:none" onclick = " return validate()">Submit</button>
+			<button id = "submitcomm" style = "display:none" onclick = "validate()">Submit</button>
 			<br><br>
-			<button  id = "createballot" onclick = "createballot.html">Create Ballot</button>
+			<button  id = "createballot" type = "button" onclick = "location.href = 'createballot.html';">Create Ballot</button>
 			<br><br>
-			<button id = "modifyballot" onclick = "modifyballot.html">Modify Ballot</button>
+			<button id = "modifyballot" type = "button" onclick = "location.href = 'modifyelection.html';">Modify Election</button>
 			<br><br>
+			<button id = "votemanagement" type = "button" onclick = "location.href = 'votemanagement.html;'">Vote Management</button>
 		</div>
 		</form>
 	</body>

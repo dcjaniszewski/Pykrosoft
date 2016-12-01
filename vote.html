@@ -3,6 +3,47 @@
 		var x = document.cookie;
 		
 	}
+	function vote() {
+		var b = false;
+		var b2 = false;
+		for(var i=1; i<4; i++) {
+			if ((document.getElementById("radiobuttonvote"+i).checked) || (document.getElementById("writein").value != "")) {
+				b = true;
+			}
+		}
+
+		for (var k = 4; k <7; k++){
+			if(document.getElementById("radiobuttonvote"+k).checked){
+				b2 = true;
+			}
+		}
+
+		if (b == true && b2 == true) {
+			alert("Thank you for voting !");
+			window.location = "mainpage.html";
+		}else{
+			alert("Please make a selection");
+		}
+
+
+	}
+
+	function vote2(){
+		var b = false;
+		for(var i=1; i<4; i++){
+			if((document.getElementById("checkbox"+i).checked)){
+				b = true;
+			}
+		}
+
+
+		if(b==true){
+			alert("Thank you for voting !");
+			window.location = "mainpage.html";
+		}else{
+			alert("Please make a selection");
+		}
+	}
 	
 	
 </script>
@@ -10,18 +51,54 @@
 <html>
 	<head>
 		<link rel = "stylesheet" href = "stylesheet.css">
+		<link rel= "stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<title>Vote</title>
 	</head>
 	<body onload = "setupPage()">
-		<div style = "height:600px; width: 500px;">
+		<div style = "height:1200px; width: 600px; vertical-align:top; text-align:left; position:static;">
 		<ul>
 			<li id = "home"><a href = "mainpage.html">Home</a></li>
 			<li id = "news"><a href = "mainpage.html">News</a></li>
 			<li id = "prt"><a href = "mainpage.html">PRT Status</a></li>
 			<li id = "signout"><a href = "login.html">Sign out</a></li>
-			
 		</ul>
 		<h1>Welcome</h1>
+			<p style = "text-align:center">Available Ballots</p>
+
+			<table style = "border-color:black">
+				<td style = "width:50%">
+						<h1 style = "text-align:center; vertical-align:top;">School Gov.</h1>
+						<p style = "margin-left:8px;">Who do you want for President?</p>
+
+						<input style = "margin-left:13px;" id = "radiobuttonvote1" name = "radiobuttonvote" class = "voteradio"; type = "radio"> Cindy Tanner</input><br>
+						<input style = "margin-left:13px;" id = "radiobuttonvote2" name = "radiobuttonvote" class = "voteradio"; type = "radio"> Aaron Saas</input><br>
+						<input style = "margin-left:13px;" id = "radiobuttonvote3" name = "radiobuttonvote" class = "voteradio"; type = "radio"> Ron Reaser</input><br>
+						<input style = "margin-left:13px; width:130px; height:30px;" id = "writein" class = "voteradio"; type = "text" placeholder = "Enter write-in"></input>
+
+						<br><br>
+						<p style = "margin-left:8px;">Who do you want for Vice President?</p>
+
+						<input style = "margin-left:13px;" id = "radiobuttonvote4" name = "radiobuttonvote1" class = "voteradio"; type = "radio"> Dominic Janiszewski</input><br>
+						<input style = "margin-left:13px;" id = "radiobuttonvote5" name = "radiobuttonvote1" class = "voteradio"; type = "radio"> Michael Mattingly</input><br>
+						<input style = "margin-left:13px;" id = "radiobuttonvote6" name = "radiobuttonvote1" class = "voteradio"; type = "radio"> William Wang</input><br>
+						<button style = "margin-left:13px" type = "button" onclick = "vote()">Vote</button>
+
+					<p style = "font-size: 12px;">Certified by: Head of Student Orgs</p>
+				</td>
+
+				<td style = " width:50%; vertical-align:top;">
+						<h1 style = "text-align:center; vertical-align:top;">School Lunch</h1>
+						<p style = "margin-right:8px">What do you want for lunch? (Check all that apply)                   </p>
+
+						<input style = "margin-right:7px;" id = "checkbox1" name = "checkbox1" class = "voteradio"; type = "checkbox"> Pizza</input><br>
+						<input style = "margin-right:7px;" id = "checkbox2" name = "checkbox2" class = "voteradio"; type = "checkbox"> Mashed Potatoes</input><br>
+						<input style = "margin-right:7px;" id = "checkbox3" name = "checkbox3" class = "voteradio"; type = "checkbox"> Mac and Cheese</input><br>
+
+						<button type = "button" onclick = "vote2()">Vote</button>
+						<p style = "font-size:12px">Certified by: Head of Student Orgs</p>
+
+				</td>
+			</table>
 		</div>
 	</body>
 </html>
