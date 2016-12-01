@@ -1,0 +1,58 @@
+<script>
+    function validate(){
+        var x = document.getElementById("eleccipnut").value;
+        var id = document.getElementById("elecinput");
+
+        var b = false;
+        if(x != ""){
+            b = true;
+            id.parentNode.removeChild(id);
+
+            id = document.getElementById("submitelection");
+            id.parentNode.removeChild(id);
+
+            id = document.getElementById("raceinput");
+            id.style.display = "inline";
+            id = document.getElementById("submitrace");
+            id.style.display = "inline";
+
+        }else{
+            alert("Please enter text");
+            b = false;
+        }
+        return b;
+    }
+    function openBall(){
+
+    }
+</script>
+
+
+<html>
+<head>
+    <link rel = "stylesheet" href = "stylesheet.css">
+    <link rel= "stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <title>Create Ballot</title>
+</head>
+<body>
+<div style = "height:600px; width: 500px;">
+    <ul>
+        <li id = "home"><a href = "mainpage.html">Home</a></li>
+        <li id = "news"><a href = "mainpage.html">News</a></li>
+        <li id = "prt"><a href = "mainpage.html">PRT Status</a></li>
+        <li id = "signout"><a href = "login.html">Sign out</a></li>
+
+    </ul>
+    <h1>Create Ballot</h1>
+    <p id = "mainpagetext">
+    </p>
+    <p>Please enter the election name you'd like to create a Ballot for</p>
+    <input id = "elecinput" name = "input" type = "text" placeholder = "Enter Election Name">
+    <br><br>
+    <button id = "submitelection" type = "submit" onclick = "return validate()">Submit</button>
+    <input id = "raceinput" name = "input" type = "text" placeholder = "Number of Races" style = "display:none">
+    <br>
+    <button id = "submitrace" type = "submit" style = "display:none" onclick = "openBall()">Submit</button>
+</div>
+</body>
+</html>
