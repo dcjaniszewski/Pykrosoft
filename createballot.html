@@ -32,24 +32,35 @@
 
         var id = document.getElementById("raceText");
         id.parentNode.removeChild(id);
-
         id = document.getElementById("raceinput");
         id.parentNode.removeChild(id);
         id = document.getElementById("submitrace");
         id.parentNode.removeChild(id);
 
-        for(i = 0; i < numRaces; i++){
+        for(i = 1; i <= numRaces; i++){
             var tb = document.createElement("input");
+            var text = document.createElement("text");
+            var firstLine = document.createElement("br");
+            var secondLine = document.createElement("br");
             tb.type = "text";
-            tb.id = "race_" + i;
+            tb.id = "race";
             tb.style = "inline";
+            text.type = "text";
+            text.id = "text";
+            text.style = "inline";
+            text.textContent = "Please enter the name of Race " + i;
+            container.appendChild(text);
+            container.appendChild(firstLine);
             container.appendChild(tb);
+            container.appendChild(secondLine);
         }
         var subRaces = document.createElement("button");
+        var firstLine = document.createElement("br");
         subRaces.type="button";
         subRaces.id = "subRaces";
         subRaces.textContent = "Submit Races";
         subRaces.style = "inline";
+        container.appendChild(firstLine);
         container.appendChild(subRaces);
     }
 </script>
